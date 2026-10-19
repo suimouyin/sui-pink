@@ -1,0 +1,94 @@
+@charset "UTF-8";
+@font-face{font-family:"Playfair Display";font-style:normal;font-weight:400 700;font-display:swap;src:url("./fonts/playfair-display-v40-latin-wght.woff2") format("woff2")}
+@font-face{font-family:"Open Sans";font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;src:url("./fonts/open-sans-v44-latin-wght.woff2") format("woff2")}
+@font-face{font-family:"Noto Sans SC";font-style:normal;font-weight:400 700;font-display:swap;src:url("./fonts/noto-sans-sc-zh-ui-wght.woff2") format("woff2")}
+:root{color-scheme:light;--sidebar-width:250px;--ink:#212121;--sidebar:#fefefe;--line:#dadce0}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:"Open Sans","Noto Sans SC",Arial,sans-serif;font-size:14.6666667px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body.drawer-open{overflow:hidden}
+a{color:inherit;text-decoration:underline;text-underline-offset:1px}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid #555;outline-offset:3px}
+.skip-link{position:fixed;top:8px;left:8px;z-index:1000;padding:12px;background:white;transform:translateY(-200%)}
+.skip-link:focus{transform:translateY(0)}
+.topbar{position:fixed;top:0;left:var(--sidebar-width);right:0;height:56px;z-index:20;background:transparent;pointer-events:none}
+.icon-button{border:0;background:transparent;width:48px;height:48px;display:inline-grid;place-items:center;padding:12px;flex-shrink:0;pointer-events:auto}
+.icon-button:hover{background:rgba(0,0,0,.04);border-radius:50%}
+.search-toggle{position:absolute;right:0;top:4px;color:#000}
+.menu-button,.mobile-site-title{display:none}
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar-width);height:100dvh;overflow:auto;background:var(--sidebar);z-index:50;padding:0 0 40px}
+.site-title{display:block;position:relative;width:170px;margin:48px 32px 52px 48px;font-family:"Playfair Display","Noto Sans SC",serif;font-size:26.6666667px;font-weight:400;line-height:46.6666667px;text-decoration:none;color:#000;overflow-wrap:anywhere}
+nav{margin:0;padding:0}
+.nav-branch{position:relative}
+.nav-link{display:block;position:relative;padding:10px 12px 10px 48px;font-size:16px;font-weight:400;line-height:22px;text-decoration:none;color:#000;overflow-wrap:anywhere}
+.nav-link:hover{color:#666}
+.nav-link[aria-current="page"]{font-weight:700}
+.nav-link[aria-current="page"]:before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:8px;background:#000}
+.nav-branch-toggle{position:absolute;left:24px;top:10px;z-index:1;width:20px;height:22px;display:grid;place-items:center;padding:0;border:0;background:transparent;color:#000}
+.nav-branch-toggle[aria-expanded="false"] svg{transform:rotate(180deg)}
+.nav-subpages{list-style:none;margin:0;padding:0}
+.nav-child{padding-left:68px}
+.main{margin-left:var(--sidebar-width);min-height:100svh;outline:none;display:flex;flex-direction:column}
+.page-header{padding:56px 48px;text-align:center}
+.document{padding:0 48px 56px}
+.footer{margin-top:auto;padding:20px 48px 34px;font-size:11px;color:#777}
+.footer .section-inner{padding-block:0}
+.layout{padding:0 1.25%}
+.section-inner{max-width:1280px;margin:0 auto;padding:24px 0}
+.text-box{padding:8px}
+h1{font-family:"Playfair Display","Noto Sans SC",serif;font-size:53.3333333px;font-weight:700;line-height:1.06;color:#0f0f0f;margin:0;padding:13px 0;overflow-wrap:anywhere}
+p{margin:0;line-height:23.4666667px;white-space:pre-line;overflow-wrap:anywhere}
+p+p,.entry{margin-top:15px}
+.profile-name strong,.email strong{font-family:inherit;font-size:14.6666667px;font-weight:700}
+.empty-state{color:var(--ink)}
+.entry h2{font:700 14.6666667px/23.4666667px "Open Sans","Noto Sans SC",sans-serif;margin:0}
+.entry p,.entry time{margin-top:6px}
+.entry time{display:block;color:#666;font-size:13px}
+figure{margin:54px 0 0}
+figure img{display:block;max-width:100%;height:auto}
+figcaption{margin-top:12px;text-align:center;line-height:1.6}
+.navigation-scrim{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.32)}
+.search-dialog{position:fixed;inset:0 0 0 var(--sidebar-width);width:calc(100% - var(--sidebar-width));height:100dvh;max-width:none;max-height:none;margin:0;border:0;padding:0;background:#fff;color:var(--ink)}
+.search-dialog::backdrop{background:transparent}
+.search-form{height:72px;display:flex;align-items:center;padding:0 12px;border-bottom:1px solid var(--line)}
+.search-form input{flex:1;min-width:0;border:0;outline:0;background:transparent;font-size:16px;padding:12px}
+.search-results{padding:40px 64px}
+.search-results p{color:#666}
+.search-result{margin:0 0 28px}
+.search-result a{font-size:20px;font-weight:400}
+.search-result p{margin-top:6px;font-size:14px}
+@media(max-width:1279px){
+ .topbar{left:0;background:#fff;pointer-events:auto}
+ .menu-button:not([hidden]){display:grid;position:absolute;left:0;top:0;height:56px;color:#000}
+ .mobile-site-title{display:block;position:absolute;left:48px;right:56px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;font-family:"Playfair Display","Noto Sans SC",serif;font-size:20px;line-height:56px;color:#000}
+ .main{margin-left:0;padding-top:56px}
+ .sidebar{box-shadow:2px 0 8px rgba(0,0,0,.13)}
+ .search-dialog{left:0;width:100%}
+ html:not(.enhanced) .topbar{display:none}
+ html:not(.enhanced) .sidebar{position:static;width:100%;height:auto;box-shadow:none;padding-bottom:24px}
+ html:not(.enhanced) .site-title{margin-top:24px;margin-bottom:20px}
+ html:not(.enhanced) .main{padding-top:0}
+}
+@media(max-width:767px){
+ .page-header{padding:28px 0}
+ .document{padding:0 0 28px}
+ .footer{padding:20px 0 25px}
+ .layout{max-width:544px;padding:0 5px;margin:0 auto}
+ .section-inner{padding:24px 2.5%}
+ h1{font-size:45.3333333px}
+ .site-title{font-size:24px}
+ .mobile-site-title{font-size:18.6666667px}
+ .search-results{padding:32px 27px}
+}
+@media(max-width:479px){
+ .page-header{padding:0}
+ .layout{max-width:1280px}
+ .section-inner{padding:24px 3.75%}
+ h1{font-size:36px}
+ .site-title{font-size:21.3333333px}
+ .mobile-site-title{font-size:17.3333333px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Sui 的个人主页。">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sui · 个人主页</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="preload" href="./fonts/playfair-display-v40-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/open-sans-v44-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="topbar">
+    <button id="navigation-toggle" class="icon-button menu-button" type="button" aria-label="打开导航菜单" aria-controls="site-navigation" aria-expanded="false" hidden><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <a class="mobile-site-title" href="./">Sui</a>
+    <button id="search-toggle" class="icon-button search-toggle" type="button" aria-label="打开搜索栏" aria-haspopup="dialog" hidden><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
+  </header>
+  <div id="navigation-scrim" class="navigation-scrim" hidden></div>
+  <aside id="site-navigation" class="sidebar" aria-label="站点导航">
+    <a class="site-title" href="./"><span id="site-name">Sui</span></a>
+    <nav id="navigation" aria-label="主要导航">
+      <div class="nav-branch">
+        <button id="home-toggle" class="nav-branch-toggle" type="button" aria-label="收起首页目录" aria-controls="page-links" aria-expanded="true" hidden><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 10 5-5 5 5"/></svg></button>
+        <a class="nav-link" href="./" aria-current="page">Home</a>
+      </div>
+      <ul id="page-links" class="nav-subpages">
+        <li><a class="nav-link nav-child" href="./cv.html">简历</a></li>
+        <li><a class="nav-link nav-child" href="./handouts.html">讲义</a></li>
+        <li><a class="nav-link nav-child" href="./exercises.html">题集</a></li>
+        <li><a class="nav-link nav-child" href="./articles.html">文章</a></li>
+        <li><a class="nav-link nav-child" href="./other.html">其他</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <main id="main" class="main" tabindex="-1">
+    <header class="page-header"><div class="layout"><div class="section-inner"><div class="text-box"><h1 lang="en">Home</h1></div></div></div></header>
+    <div class="document"><div class="layout"><div class="section-inner"><div class="text-box"><section aria-labelledby="profile-name">
+          <p id="profile-name" class="profile-name"><strong>Sui</strong></p>
+          
+          <p class="email"><strong>Email:</strong> suimou440[at]<a href="mailto:suimou440@gmail.com" aria-label="发送邮件至 suimou440@gmail.com">gmail.com</a></p>
+          
+        </section></div></div></div></div>
+    <footer class="footer"><div class="layout"><div class="section-inner"><div class="text-box">© <span id="year">2026</span> <span id="footer-name">sui.pink</span></div></div></div></footer>
+  </main>
+  <dialog id="search-dialog" class="search-dialog" aria-label="搜索此网站">
+    <form id="search-form" class="search-form" role="search">
+      <button id="search-close" class="icon-button" type="button" aria-label="关闭搜索"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 4-8 8 8 8M4 12h17"/></svg></button>
+      <input id="search-input" type="search" name="q" placeholder="搜索此网站" aria-label="搜索此网站" autocomplete="off">
+      <button class="icon-button" type="submit" aria-label="搜索"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
+    </form>
+    <div id="search-results" class="search-results" aria-live="polite"></div>
+  </dialog>
+  <script id="search-data" type="application/json">[{"title":"Home","url":"./","text":"首页 Sui suimou440@gmail.com"},{"title":"CV","url":"./cv.html","text":"简历"},{"title":"Lecture Notes","url":"./handouts.html","text":"讲义"},{"title":"Problem Sets","url":"./exercises.html","text":"题集"},{"title":"Articles","url":"./articles.html","text":"文章"},{"title":"Miscellaneous","url":"./other.html","text":"其他"}]</script>
+</body>
+</html>
