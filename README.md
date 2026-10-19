@@ -1,5 +1,9 @@
 # Sui
 
-Static personal homepage for https://sui.pink/.
+Personal homepage: https://sui.pink/
 
-Font licenses and sources are included in `fonts/`.
+Published with GitHub Pages from the `main` branch, repository root.
+All styles, scripts, and fonts are served locally.
+
+Keep `CNAME` (`sui.pink`) and `.nojekyll` when updating the static pages.
+The previous ChatGPT Sites host is no longer the production destination.
